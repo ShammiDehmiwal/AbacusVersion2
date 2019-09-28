@@ -25,8 +25,21 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var vLevel4: UIView!
     
+    @IBOutlet weak var ivLevel1: UIImageView!
+    @IBOutlet weak var ivLevel2: UIImageView!
+    @IBOutlet weak var ivLevel3: UIImageView!
+    @IBOutlet weak var ivLevel4: UIImageView!
+    
+    @IBOutlet weak var lblLevel2Text: UILabel!
+    @IBOutlet weak var lblLevel1Text: UILabel!
+    @IBOutlet weak var lblLevel3Text: UILabel!
+    @IBOutlet weak var lblLevel4Text: UILabel!
+    
+    
+    
     
     @IBOutlet weak var btnLevelDetailTitle: UIButton!
+    
     
     
     //v Detail Level View
@@ -44,6 +57,10 @@ class ViewController: UIViewController {
     
    // var dicLevels : NSMutableDictionary = NSMutableDictionary()
     
+    private var shadowLayer: CAShapeLayer!
+    private var cornerRadius: CGFloat = 50.0
+    
+    
     
     var dicLevelSingle : NSDictionary = ["name":"Single Digit","digitType":"Single Digit","numberOfDigit":"15","speed":"500","isSubtraction":"Yes"]
     
@@ -59,15 +76,49 @@ class ViewController: UIViewController {
     var iSpeed : Int = 1500
     var bIsSubtraction : Bool = true
     
+    
+    
+    
+    
+    
     //MARK: - View Life Cycle Methods.
     override func viewDidLoad()
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        self.vLevelDetailView.dropShadow()
+       // self.vLevelDetailView.dropShadow()
         self.initLevels()
     }
+    
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        
+        if shadowLayer == nil
+        {
+            shadowLayer = CAShapeLayer()
+            
+            shadowLayer.path = UIBezierPath(roundedRect: vLevelDetailView.bounds, cornerRadius: cornerRadius).cgPath
+            shadowLayer.fillColor = UIColor.black.cgColor
+            
+            shadowLayer.shadowColor = UIColor.black.cgColor
+            shadowLayer.shadowPath = shadowLayer.path
+            shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+            shadowLayer.shadowOpacity = 0.8
+            shadowLayer.shadowRadius = 5
+            
+            vLevelDetailView.layer.insertSublayer(shadowLayer, at: 0)
+         
+            // pin the containerView to the edges to the view
+//            self.vLevelDetailView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+//            self.vLevelDetailView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+//            self.vLevelDetailView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+//            self.vLevelDetailView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//
+        }
+    }
+    
     
     //MARK: - initView Methods.
     func initLevels()
@@ -180,6 +231,17 @@ class ViewController: UIViewController {
         btnSpeedUpFlickering.isHidden = true
         btnSpeedDownFlickering.isHidden = true
         
+        ivLevel1.image = UIImage(named: "levelBlueCustomRectButton")!
+        ivLevel2.image = UIImage(named: "levelCustomRectButton")!
+        ivLevel3.image = UIImage(named: "levelCustomRectButton")!
+        ivLevel4.image = UIImage(named: "levelCustomRectButton")!
+        
+        lblLevel1Text.textColor = UIColor.white
+        lblLevel2Text.textColor = UIColor.greyishBrown
+        lblLevel3Text.textColor = UIColor.greyishBrown
+        lblLevel4Text.textColor = UIColor.greyishBrown
+        
+        
     }
     
     @objc func ivLevel2TapAction(gesture : UIGestureRecognizer)
@@ -216,6 +278,17 @@ class ViewController: UIViewController {
         
         btnSpeedUpFlickering.isHidden = true
         btnSpeedDownFlickering.isHidden = true
+        
+        
+        ivLevel1.image = UIImage(named: "levelCustomRectButton")!
+        ivLevel2.image = UIImage(named: "levelBlueCustomRectButton")!
+        ivLevel3.image = UIImage(named: "levelCustomRectButton")!
+        ivLevel4.image = UIImage(named: "levelCustomRectButton")!
+        
+        lblLevel1Text.textColor = UIColor.greyishBrown
+        lblLevel2Text.textColor = UIColor.white
+        lblLevel3Text.textColor = UIColor.greyishBrown
+        lblLevel4Text.textColor = UIColor.greyishBrown
     }
     
     @objc func ivLevel3TapAction(gesture : UIGestureRecognizer)
@@ -251,6 +324,18 @@ class ViewController: UIViewController {
         
         btnSpeedUpFlickering.isHidden = true
         btnSpeedDownFlickering.isHidden = true
+        
+        
+        ivLevel1.image = UIImage(named: "levelCustomRectButton")!
+        ivLevel2.image = UIImage(named: "levelCustomRectButton")!
+        ivLevel3.image = UIImage(named: "levelBlueCustomRectButton")!
+        ivLevel4.image = UIImage(named: "levelCustomRectButton")!
+        
+        lblLevel1Text.textColor = UIColor.greyishBrown
+        lblLevel2Text.textColor = UIColor.greyishBrown
+        lblLevel3Text.textColor = UIColor.white
+        lblLevel4Text.textColor = UIColor.greyishBrown
+        
     }
     
     @objc func ivLevel4TapAction(gesture : UIGestureRecognizer)
@@ -289,6 +374,17 @@ class ViewController: UIViewController {
         
         btnSpeedUpFlickering.isHidden = false
         btnSpeedDownFlickering.isHidden = false
+        
+        
+        ivLevel1.image = UIImage(named: "levelCustomRectButton")!
+        ivLevel2.image = UIImage(named: "levelCustomRectButton")!
+        ivLevel3.image = UIImage(named: "levelCustomRectButton")!
+        ivLevel4.image = UIImage(named: "levelBlueCustomRectButton")!
+        
+        lblLevel1Text.textColor = UIColor.greyishBrown
+        lblLevel2Text.textColor = UIColor.greyishBrown
+        lblLevel3Text.textColor = UIColor.greyishBrown
+        lblLevel4Text.textColor = UIColor.white
     }
     
     
@@ -405,6 +501,13 @@ class ViewController: UIViewController {
     //MARK: - Button Action Methods.
     @IBAction func btnStartTapAction(_ sender: UIButton)
     {
+        appDel.selectNumberOfDigit = self.iNumberOfDigit
+        appDel.selectShowSpeed = self.iSpeed
+        appDel.selectDigitType = self.strCurrentDigitType
+        appDel.selectIsSubtractionEnable = self.bIsSubtraction
+        
+        
+        //navigate to other screen
         let obj : ShowNumberVC = self.storyboard?.instantiateViewController(withIdentifier: "ShowNumberVC") as! ShowNumberVC
         
         obj.iNumberOfDigits = self.iNumberOfDigit

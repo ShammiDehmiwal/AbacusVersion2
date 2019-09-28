@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B858327CBD4C6645FC82A60 /* Pods_AbacusTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A382EC3E4E5D1CF73E2B968 /* Pods_AbacusTests.framework */; };
+		46F0E8D06ED875104425962A /* Pods_Abacus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE4A909F1C22AD893AB9DFB /* Pods_Abacus.framework */; };
+		69A14F3174AF95F9B97E12F0 /* Pods_Abacus_AbacusUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D12D32921B28548EB9116733 /* Pods_Abacus_AbacusUITests.framework */; };
 		F9250617233C77C0006D60C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9250616233C77C0006D60C6 /* AppDelegate.swift */; };
 		F9250619233C77C0006D60C6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9250618233C77C0006D60C6 /* ViewController.swift */; };
 		F925061C233C77C0006D60C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F925061A233C77C0006D60C6 /* Main.storyboard */; };
@@ -22,6 +25,9 @@
 		F9250657233CC746006D60C6 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9250656233CC746006D60C6 /* String+Extension.swift */; };
 		F9250659233D1914006D60C6 /* ShowNumberVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9250658233D1914006D60C6 /* ShowNumberVC.swift */; };
 		F925065B233D2400006D60C6 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F925065A233D2400006D60C6 /* Int+Extension.swift */; };
+		F9262527233DF5F0006E7B81 /* QuestionAnswerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9262526233DF5F0006E7B81 /* QuestionAnswerVC.swift */; };
+		F9262529233E06D3006E7B81 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9262528233E06D3006E7B81 /* Constant.swift */; };
+		F926252B233E7598006E7B81 /* ShowResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F926252A233E7598006E7B81 /* ShowResultsVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +48,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09E90BA274179307C56612B5 /* Pods-Abacus-AbacusUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abacus-AbacusUITests.release.xcconfig"; path = "Target Support Files/Pods-Abacus-AbacusUITests/Pods-Abacus-AbacusUITests.release.xcconfig"; sourceTree = "<group>"; };
+		2ADE632FBB490B20E59A4ED5 /* Pods-AbacusTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusTests.debug.xcconfig"; path = "Target Support Files/Pods-AbacusTests/Pods-AbacusTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2FE4A909F1C22AD893AB9DFB /* Pods_Abacus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abacus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63DD3405330B51D8DFF79D2C /* Pods-Abacus.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abacus.debug.xcconfig"; path = "Target Support Files/Pods-Abacus/Pods-Abacus.debug.xcconfig"; sourceTree = "<group>"; };
+		6A382EC3E4E5D1CF73E2B968 /* Pods_AbacusTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AbacusTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82645E3095AF75C1EDB50718 /* Pods-AbacusTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AbacusTests.release.xcconfig"; path = "Target Support Files/Pods-AbacusTests/Pods-AbacusTests.release.xcconfig"; sourceTree = "<group>"; };
+		8ABE70AD9486CA3D1CD68F88 /* Pods-Abacus.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abacus.release.xcconfig"; path = "Target Support Files/Pods-Abacus/Pods-Abacus.release.xcconfig"; sourceTree = "<group>"; };
+		D12D32921B28548EB9116733 /* Pods_Abacus_AbacusUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Abacus_AbacusUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3316F171C12D4FD870F5D26 /* Pods-Abacus-AbacusUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Abacus-AbacusUITests.debug.xcconfig"; path = "Target Support Files/Pods-Abacus-AbacusUITests/Pods-Abacus-AbacusUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9250613233C77C0006D60C6 /* Abacus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Abacus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9250616233C77C0006D60C6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F9250618233C77C0006D60C6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +78,9 @@
 		F9250656233CC746006D60C6 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		F9250658233D1914006D60C6 /* ShowNumberVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowNumberVC.swift; sourceTree = "<group>"; };
 		F925065A233D2400006D60C6 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		F9262526233DF5F0006E7B81 /* QuestionAnswerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerVC.swift; sourceTree = "<group>"; };
+		F9262528233E06D3006E7B81 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		F926252A233E7598006E7B81 /* ShowResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultsVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9250655233CB6BF006D60C6 /* QuartzCore.framework in Frameworks */,
+				46F0E8D06ED875104425962A /* Pods_Abacus.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B858327CBD4C6645FC82A60 /* Pods_AbacusTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,12 +105,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69A14F3174AF95F9B97E12F0 /* Pods_Abacus_AbacusUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AEF02E0370BA70691FE62E9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63DD3405330B51D8DFF79D2C /* Pods-Abacus.debug.xcconfig */,
+				8ABE70AD9486CA3D1CD68F88 /* Pods-Abacus.release.xcconfig */,
+				D3316F171C12D4FD870F5D26 /* Pods-Abacus-AbacusUITests.debug.xcconfig */,
+				09E90BA274179307C56612B5 /* Pods-Abacus-AbacusUITests.release.xcconfig */,
+				2ADE632FBB490B20E59A4ED5 /* Pods-AbacusTests.debug.xcconfig */,
+				82645E3095AF75C1EDB50718 /* Pods-AbacusTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F925060A233C77C0006D60C6 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +134,7 @@
 				F9250635233C77C3006D60C6 /* AbacusUITests */,
 				F9250614233C77C0006D60C6 /* Products */,
 				F9250653233CB6BF006D60C6 /* Frameworks */,
+				AEF02E0370BA70691FE62E9F /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +159,7 @@
 				F925061D233C77C3006D60C6 /* Assets.xcassets */,
 				F925061F233C77C3006D60C6 /* LaunchScreen.storyboard */,
 				F9250622233C77C3006D60C6 /* Info.plist */,
+				F9262528233E06D3006E7B81 /* Constant.swift */,
 			);
 			path = Abacus;
 			sourceTree = "<group>";
@@ -160,6 +197,8 @@
 			children = (
 				F9250618233C77C0006D60C6 /* ViewController.swift */,
 				F9250658233D1914006D60C6 /* ShowNumberVC.swift */,
+				F9262526233DF5F0006E7B81 /* QuestionAnswerVC.swift */,
+				F926252A233E7598006E7B81 /* ShowResultsVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -210,6 +249,9 @@
 			isa = PBXGroup;
 			children = (
 				F9250654233CB6BF006D60C6 /* QuartzCore.framework */,
+				2FE4A909F1C22AD893AB9DFB /* Pods_Abacus.framework */,
+				D12D32921B28548EB9116733 /* Pods_Abacus_AbacusUITests.framework */,
+				6A382EC3E4E5D1CF73E2B968 /* Pods_AbacusTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,9 +263,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F925063B233C77C3006D60C6 /* Build configuration list for PBXNativeTarget "Abacus" */;
 			buildPhases = (
+				A1719552D9F6D0F4DE2C8DA9 /* [CP] Check Pods Manifest.lock */,
 				F925060F233C77C0006D60C6 /* Sources */,
 				F9250610233C77C0006D60C6 /* Frameworks */,
 				F9250611233C77C0006D60C6 /* Resources */,
+				2262B2CCD5F5EA1705796E93 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -238,6 +282,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F925063E233C77C3006D60C6 /* Build configuration list for PBXNativeTarget "AbacusTests" */;
 			buildPhases = (
+				3CE604CDEE9C6C4DB23F7498 /* [CP] Check Pods Manifest.lock */,
 				F9250623233C77C3006D60C6 /* Sources */,
 				F9250624233C77C3006D60C6 /* Frameworks */,
 				F9250625233C77C3006D60C6 /* Resources */,
@@ -256,9 +301,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F9250641233C77C3006D60C6 /* Build configuration list for PBXNativeTarget "AbacusUITests" */;
 			buildPhases = (
+				2112B899F519252F0F9053B9 /* [CP] Check Pods Manifest.lock */,
 				F925062E233C77C3006D60C6 /* Sources */,
 				F925062F233C77C3006D60C6 /* Frameworks */,
 				F9250630233C77C3006D60C6 /* Resources */,
+				8543C2D6A41BF44C2000B275 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -341,17 +388,123 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2112B899F519252F0F9053B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Abacus-AbacusUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2262B2CCD5F5EA1705796E93 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Abacus/Pods-Abacus-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Abacus/Pods-Abacus-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Abacus/Pods-Abacus-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3CE604CDEE9C6C4DB23F7498 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AbacusTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8543C2D6A41BF44C2000B275 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Abacus-AbacusUITests/Pods-Abacus-AbacusUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Abacus-AbacusUITests/Pods-Abacus-AbacusUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Abacus-AbacusUITests/Pods-Abacus-AbacusUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1719552D9F6D0F4DE2C8DA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Abacus-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F925060F233C77C0006D60C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9262527233DF5F0006E7B81 /* QuestionAnswerVC.swift in Sources */,
 				F9250619233C77C0006D60C6 /* ViewController.swift in Sources */,
 				F925065B233D2400006D60C6 /* Int+Extension.swift in Sources */,
 				F925064B233C7924006D60C6 /* Color+Extension.swift in Sources */,
 				F9250652233C988D006D60C6 /* View+Extension.swift in Sources */,
+				F926252B233E7598006E7B81 /* ShowResultsVC.swift in Sources */,
 				F925064D233C799E006D60C6 /* Font+Extension.swift in Sources */,
 				F9250657233CC746006D60C6 /* String+Extension.swift in Sources */,
+				F9262529233E06D3006E7B81 /* Constant.swift in Sources */,
 				F9250659233D1914006D60C6 /* ShowNumberVC.swift in Sources */,
 				F9250617233C77C0006D60C6 /* AppDelegate.swift in Sources */,
 			);
@@ -526,6 +679,7 @@
 		};
 		F925063C233C77C3006D60C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63DD3405330B51D8DFF79D2C /* Pods-Abacus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +699,7 @@
 		};
 		F925063D233C77C3006D60C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8ABE70AD9486CA3D1CD68F88 /* Pods-Abacus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -564,6 +719,7 @@
 		};
 		F925063F233C77C3006D60C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ADE632FBB490B20E59A4ED5 /* Pods-AbacusTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -585,6 +741,7 @@
 		};
 		F9250640233C77C3006D60C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82645E3095AF75C1EDB50718 /* Pods-AbacusTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -606,6 +763,7 @@
 		};
 		F9250642233C77C3006D60C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D3316F171C12D4FD870F5D26 /* Pods-Abacus-AbacusUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -626,6 +784,7 @@
 		};
 		F9250643233C77C3006D60C6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09E90BA274179307C56612B5 /* Pods-Abacus-AbacusUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

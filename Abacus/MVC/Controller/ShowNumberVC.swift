@@ -10,21 +10,31 @@ import UIKit
 
 class ShowNumberVC: UIViewController {
 
-    
+    //show question with loading progress view.
     @IBOutlet weak var pvShowLoading: UIProgressView!
     
     @IBOutlet weak var lblNumber: UILabel!
     
     @IBOutlet weak var ivCircleBg: UIImageView!
     
+   
+    
+    // input answer view.
+    @IBOutlet weak var vUserAnswer: UIView!
+    @IBOutlet weak var txtUserAnswer: UITextField!
+    
+    
     
     var iNumberOfDigits : Int = 0
-    var iCounter : Int = 0
+    var iCounter : Int = 1
     var timer = Timer()
     var iShowInterval : Int = 0
     var strDigitType : String = "single"
     var bShowSubtraction : Bool = false
     
+    
+    var strExpression : String = ""
+    var iActualTotal : Int = 0
     
     //MARK: - View Life Cycle Methods
     override func viewDidLoad()
@@ -51,6 +61,45 @@ class ShowNumberVC: UIViewController {
     
     @objc func setProgressBar()
     {
+        print("iCounter Value : \(iCounter)")
+        print("Progress Loading : \(Float(iCounter) / Float(iNumberOfDigits))")
+        pvShowLoading.progress = Float(iCounter) / Float(iNumberOfDigits)  //Float(iCounter/iNumberOfDigits)
+        
+        var aRandomInt : Int = 0
+        
+        if bShowSubtraction
+        {
+            if strDigitType == "single"
+            {
+                aRandomInt = Int.random(in: -9...9)
+                
+            }else if strDigitType == "double"
+            {
+                aRandomInt = Int.random(in: -99...(99))
+                
+            }else if strDigitType == "triple"
+            {
+                aRandomInt = Int.random(in: -999...(999))
+            }
+            
+        }else
+        {
+            if strDigitType == "single"
+            {
+                aRandomInt = Int.random(in: 0...9)
+                
+            }else if strDigitType == "double"
+            {
+                aRandomInt = Int.random(in: 10...99)
+                
+            }else if strDigitType == "triple"
+            {
+                aRandomInt = Int.random(in: 100...999)
+            }
+        }
+        
+        print("Random Number : \(aRandomInt)")
+        
         if iNumberOfDigits == iCounter
         {
             pvShowLoading.progress = 1.0
@@ -58,49 +107,94 @@ class ShowNumberVC: UIViewController {
             timer.invalidate()
             iCounter = 0
             
+           //set all expression and calculate results.
+            lblNumber.text = "\(aRandomInt)"
+            
+            iActualTotal = iActualTotal + aRandomInt
+            
+            if aRandomInt >= 0
+            {//positive number
+                strExpression = "\(strExpression)+\(aRandomInt)"
+            }else
+            {//negative number
+                strExpression = "\(strExpression)\(aRandomInt)"
+            }
+            
+            
+            
+            //show user answer view.
+            vUserAnswer.isHidden = false
+            
+            let transition = CATransition()
+            transition.duration = 0.5
+            transition.type = CATransitionType.push
+            transition.subtype = CATransitionSubtype.fromRight
+            transition.timingFunction = CAMediaTimingFunction(name:CAMediaTimingFunctionName.easeInEaseOut)
+            vUserAnswer.layer.add(transition, forKey: kCATransition)
+            
+            
         }else
         {
-            iCounter = iCounter + 1
+           
+           lblNumber.text = "\(aRandomInt)"
             
-            pvShowLoading.progress = Float(iCounter/iNumberOfDigits)
+            iActualTotal = iActualTotal + aRandomInt
             
-            var aRandomInt : Int = 0
-            
-            if bShowSubtraction
+            if iCounter == 1
             {
-                if strDigitType == "single"
-                {
-                    aRandomInt = Int.random(in: -9...9)
-                    
-                }else if strDigitType == "double"
-                {
-                    aRandomInt = Int.random(in: -99...(99))
-                    
-                }else if strDigitType == "triple"
-                {
-                    aRandomInt = Int.random(in: -999...(999))
-                }
+                strExpression = "\(aRandomInt)"
                 
             }else
             {
-                if strDigitType == "single"
-                {
-                    aRandomInt = Int.random(in: 0...9)
-                    
-                }else if strDigitType == "double"
-                {
-                    aRandomInt = Int.random(in: 10...99)
-                    
-                }else if strDigitType == "triple"
-                {
-                    aRandomInt = Int.random(in: 100...999)
+                if aRandomInt >= 0
+                {//positive number
+                    strExpression = "\(strExpression)+\(aRandomInt)"
+                }else
+                {//negative number
+                    strExpression = "\(strExpression)\(aRandomInt)"
                 }
             }
             
-           lblNumber.text = "\(aRandomInt)"
+            iCounter = iCounter + 1
         }
+        
+        print("Actual Total : \(iActualTotal)")
     }
     
+    
+    //MARK: - UIButton Action Methods.
+    @IBAction func btnSubmitAnswerTapAction(_ sender: UIButton)
+    {
+        var strShowSubtraction : String = "No"
+        if bShowSubtraction
+        {
+            strShowSubtraction = "Yes"
+            
+        }else
+        {
+            strShowSubtraction = "No"
+        }
+        
+        var isResultPass : Bool = false
+        
+        if txtUserAnswer.text! == "\(iActualTotal)"
+        {
+            isResultPass = true
+        }
+        
+        let dicQuestion : NSDictionary = ["questionNumber":"\(appDel.marrUserQuestions.count+1)","expression":strExpression,"actualTotal":"\(iActualTotal)","yourAnswer":"\(txtUserAnswer.text!)","numberOfDigit":"\(iNumberOfDigits)","speedTimeMS":"\(iShowInterval)","isShowSubtraction":strShowSubtraction,"digitType":strDigitType,"isResultPass":isResultPass]
+        
+        appDel.marrUserQuestions.add(dicQuestion)
+        
+        
+        let obj :  QuestionAnswerVC = self.storyboard?.instantiateViewController(withIdentifier: "QuestionAnswerVC") as! QuestionAnswerVC
+        
+        obj.dicQuestionResult = dicQuestion
+        
+        self.navigationController?.pushViewController(obj, animated: true)
+        
+    }
+
     
     /*
     // MARK: - Navigation

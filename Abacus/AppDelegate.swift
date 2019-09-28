@@ -7,15 +7,28 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var marrUserQuestions : NSMutableArray = NSMutableArray()
+    
+    var selectNumberOfDigit : Int = 0
+    var selectShowSpeed : Int = 1500
+    var selectDigitType : String = "single"
+    var selectIsSubtractionEnable : Bool = true
 
+    
+    //MARK: - Application Life Cycle Methods.
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //enable the IQKeyboard
+        IQKeyboardManager.shared.enable = true
+        
         return true
     }
 
