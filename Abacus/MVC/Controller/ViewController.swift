@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var vLevelDetailView: UIView!
     
+    @IBOutlet weak var vBgDetailView: UIView!
     
     //levels
     @IBOutlet weak var vLevel1: UIView!
@@ -56,9 +57,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSpeedDownFlickering: UIButton!
     
    // var dicLevels : NSMutableDictionary = NSMutableDictionary()
-    
-    private var shadowLayer: CAShapeLayer!
-    private var cornerRadius: CGFloat = 50.0
+  
     
     
     
@@ -68,7 +67,7 @@ class ViewController: UIViewController {
     
     var dicLevelThird : NSDictionary = ["name":"Triple Digit","digitType":"Triple Digit","numberOfDigit":"5","speed":"500","isSubtraction":"Yes"]
     
-     var dicLevelCustom : NSDictionary = ["name":"Custom","digitType":"Custom","numberOfDigit":"15","speed":"500","isSubtraction":"No"]
+     var dicLevelCustom : NSDictionary = ["name":"Custom","digitType":"Single","numberOfDigit":"15","speed":"500","isSubtraction":"No"]
     
     
     var strCurrentDigitType : String = "single"
@@ -79,7 +78,8 @@ class ViewController: UIViewController {
     
     
     
-    
+    // container view and image view have the same corner radius
+    let cornerRadius : CGFloat = 20.0
     
     //MARK: - View Life Cycle Methods.
     override func viewDidLoad()
@@ -87,38 +87,46 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-       // self.vLevelDetailView.dropShadow()
+        vBgDetailView.layer.cornerRadius = cornerRadius
+        vBgDetailView.layer.shadowColor = UIColor.darkGray.cgColor
+        vBgDetailView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        vBgDetailView.layer.shadowRadius = 20.0
+        vBgDetailView.layer.shadowOpacity = 0.9
+        
+        vLevelDetailView.layer.cornerRadius = cornerRadius
+        vLevelDetailView.clipsToBounds = true
+        
         self.initLevels()
     }
     
-    override func viewDidLayoutSubviews()
-    {
-        super.viewDidLayoutSubviews()
-        
-        if shadowLayer == nil
-        {
-            shadowLayer = CAShapeLayer()
-            
-            shadowLayer.path = UIBezierPath(roundedRect: vLevelDetailView.bounds, cornerRadius: cornerRadius).cgPath
-            shadowLayer.fillColor = UIColor.black.cgColor
-            
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-            shadowLayer.shadowOpacity = 0.8
-            shadowLayer.shadowRadius = 5
-            
-            vLevelDetailView.layer.insertSublayer(shadowLayer, at: 0)
-         
-            // pin the containerView to the edges to the view
-//            self.vLevelDetailView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
-//            self.vLevelDetailView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
-//            self.vLevelDetailView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-//            self.vLevelDetailView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+//    override func viewDidLayoutSubviews()
+//    {
+//        super.viewDidLayoutSubviews()
 //
-        }
-    }
-    
+//        if shadowLayer == nil
+//        {
+//            shadowLayer = CAShapeLayer()
+//
+//            shadowLayer.path = UIBezierPath(roundedRect: vLevelDetailView.bounds, cornerRadius: cornerRadius).cgPath
+//            shadowLayer.fillColor = UIColor.black.cgColor
+//
+//            shadowLayer.shadowColor = UIColor.black.cgColor
+//            shadowLayer.shadowPath = shadowLayer.path
+//            shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+//            shadowLayer.shadowOpacity = 0.8
+//            shadowLayer.shadowRadius = 5
+//
+//            vLevelDetailView.layer.insertSublayer(shadowLayer, at: 0)
+//
+//            // pin the containerView to the edges to the view
+////            self.vLevelDetailView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+////            self.vLevelDetailView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+////            self.vLevelDetailView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+////            self.vLevelDetailView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+////
+//        }
+//    }
+//
     
     //MARK: - initView Methods.
     func initLevels()

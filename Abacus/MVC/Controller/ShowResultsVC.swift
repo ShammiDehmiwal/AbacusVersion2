@@ -17,6 +17,8 @@ class ShowResultsVC: UIViewController {
     @IBOutlet weak var btnDigitType: UIButton!
     
     @IBOutlet weak var vResultDetailView: UIView!
+    @IBOutlet weak var vBgResultDetailView: UIView!
+    
     
     @IBOutlet weak var lblTotalQuestions: UILabel!
     
@@ -26,32 +28,23 @@ class ShowResultsVC: UIViewController {
     
     @IBOutlet weak var lblWrongAnswer: UILabel!
     
-    private var shadowLayer: CAShapeLayer!
-    private var cornerRadius: CGFloat = 50.0
     
+    // container view and image view have the same corner radius
+    let cornerRadius : CGFloat = 20.0
     
     //MARK: - View Life Cycle Methods.
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        if shadowLayer == nil
-        {
-            shadowLayer = CAShapeLayer()
-            
-            shadowLayer.path = UIBezierPath(roundedRect: vResultDetailView.bounds, cornerRadius: cornerRadius).cgPath
-            shadowLayer.fillColor = UIColor.black.cgColor
-            
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-            shadowLayer.shadowOpacity = 0.8
-            shadowLayer.shadowRadius = 5
-            
-            vResultDetailView.layer.insertSublayer(shadowLayer, at: 0)
-            
-        }
+        vBgResultDetailView.layer.cornerRadius = cornerRadius
+        vBgResultDetailView.layer.shadowColor = UIColor.darkGray.cgColor
+        vBgResultDetailView.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        vBgResultDetailView.layer.shadowRadius = 20.0
+        vBgResultDetailView.layer.shadowOpacity = 0.9
         
+        vResultDetailView.layer.cornerRadius = cornerRadius
+        vResultDetailView.clipsToBounds = true
         
         
         ivCircle.layer.cornerRadius = ivCircle.frame.size.height/2

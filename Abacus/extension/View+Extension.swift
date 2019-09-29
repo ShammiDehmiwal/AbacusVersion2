@@ -12,6 +12,20 @@ import QuartzCore
 
 extension UIView {
     
+    
+  
+        func setShadowWithCornerRadius(corners : CGFloat){
+            self.layer.cornerRadius = corners
+            let shadowPath2 = UIBezierPath(rect: self.bounds)
+            self.layer.masksToBounds = false
+            self.layer.shadowColor = UIColor.black.cgColor
+            self.layer.shadowOffset = CGSize(width: CGFloat(1.0), height: CGFloat(1.0))
+            self.layer.shadowOpacity = 1
+            self.layer.shadowPath = shadowPath2.cgPath
+            
+        }
+    
+    
     func dropShadow() {
         
         self.layer.masksToBounds = false

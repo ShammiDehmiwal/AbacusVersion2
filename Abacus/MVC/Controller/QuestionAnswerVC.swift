@@ -19,7 +19,13 @@ class QuestionAnswerVC: UIViewController {
     
     @IBOutlet weak var btnQuestionNumber: UIButton!
     
+    @IBOutlet weak var btnNextQuestions: UIButton!
+    
+    
     @IBOutlet weak var vDetailResult: UIView!
+    
+    @IBOutlet weak var vBgDetailResult: UIView!
+    
     
     @IBOutlet weak var lblQuestionExpression: UILabel!
     
@@ -32,11 +38,10 @@ class QuestionAnswerVC: UIViewController {
     @IBOutlet weak var lblTotalQuestions: UILabel!
     
     
-    private var shadowLayer: CAShapeLayer!
-    private var cornerRadius: CGFloat = 50.0
-    
     var dicQuestionResult : NSDictionary = NSDictionary()
     
+    // container view and image view have the same corner radius
+    let cornerRadius : CGFloat = 20.0
     
     //MARK: - View Life Cycle
     override func viewDidLoad()
@@ -52,42 +57,37 @@ class QuestionAnswerVC: UIViewController {
     //MARK: - Custom Methods.
     func initView()
     {
-        if shadowLayer == nil
-        {
-            shadowLayer = CAShapeLayer()
-            
-            shadowLayer.path = UIBezierPath(roundedRect: vDetailResult.bounds, cornerRadius: cornerRadius).cgPath
-            shadowLayer.fillColor = UIColor.black.cgColor
-            
-            shadowLayer.shadowColor = UIColor.black.cgColor
-            shadowLayer.shadowPath = shadowLayer.path
-            shadowLayer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-            shadowLayer.shadowOpacity = 0.8
-            shadowLayer.shadowRadius = 5
-            
-            vDetailResult.layer.insertSublayer(shadowLayer, at: 0)
-            vDetailResult.layer.cornerRadius = cornerRadius
-        }
+        vBgDetailResult.layer.cornerRadius = cornerRadius
+        vBgDetailResult.layer.shadowColor = UIColor.darkGray.cgColor
+        vBgDetailResult.layer.shadowOffset = CGSize(width: 5.0, height: 5.0)
+        vBgDetailResult.layer.shadowRadius = 20.0
+        vBgDetailResult.layer.shadowOpacity = 0.9
         
+        vDetailResult.layer.cornerRadius = cornerRadius
+        vDetailResult.clipsToBounds = true
+        
+        if appDel.marrUserQuestions.count >= 10
+        {
+            btnNextQuestions.isHidden = true
+            
+        }else
+        {
+            btnNextQuestions.isHidden = false
+        }
         
         
         if self.dicQuestionResult.allKeys.count > 0
         {
-            
-            
             if self.dicQuestionResult.object(forKey: "actualTotal") as! String == self.dicQuestionResult.object(forKey: "yourAnswer") as! String
             {//right answer
               ivTopBar.image = UIImage(named: "topBarGreenBgImage")!
                 ivCircleTopBar.image = UIImage(named: "resultCorrectImage")!
-                
-             
-                
+               
             }else
             {//wrong answwer
                 ivTopBar.image = UIImage(named: "topBarRedBgImage")!
                 ivCircleTopBar.image = UIImage(named: "resultIncorrectImage")!
-                
-              
+            
             }
             
             if let strQuestionName = self.dicQuestionResult.object(forKey: "questionNumber") as? String

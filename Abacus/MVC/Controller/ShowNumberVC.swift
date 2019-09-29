@@ -29,6 +29,7 @@ class ShowNumberVC: UIViewController {
     var iCounter : Int = 1
     var timer = Timer()
     var iShowInterval : Int = 0
+    var iPreviousNumber : Int = 0
     var strDigitType : String = "single"
     var bShowSubtraction : Bool = false
     
@@ -67,38 +68,35 @@ class ShowNumberVC: UIViewController {
         
         var aRandomInt : Int = 0
         
-        if bShowSubtraction
+        repeat {
+            //take input from standard IO into variable n
+            
+            aRandomInt = self.generateRandomNumber(isShowSubtraction: bShowSubtraction, strDigitTypeLocal: self.strDigitType)
+            
+            
+        } while aRandomInt == 0;
+        
+        
+        if aRandomInt == iPreviousNumber
         {
-            if strDigitType == "single"
-            {
-                aRandomInt = Int.random(in: -9...9)
+            repeat {
+                //take input from standard IO into variable n
                 
-            }else if strDigitType == "double"
-            {
-                aRandomInt = Int.random(in: -99...(99))
+                aRandomInt = self.generateRandomNumber(isShowSubtraction: bShowSubtraction, strDigitTypeLocal: self.strDigitType)
                 
-            }else if strDigitType == "triple"
-            {
-                aRandomInt = Int.random(in: -999...(999))
-            }
+            } while aRandomInt == 0;
             
         }else
         {
-            if strDigitType == "single"
-            {
-                aRandomInt = Int.random(in: 0...9)
-                
-            }else if strDigitType == "double"
-            {
-                aRandomInt = Int.random(in: 10...99)
-                
-            }else if strDigitType == "triple"
-            {
-                aRandomInt = Int.random(in: 100...999)
-            }
+            iPreviousNumber = aRandomInt
         }
         
+        
+        
         print("Random Number : \(aRandomInt)")
+        iPreviousNumber = aRandomInt
+        
+        
         
         if iNumberOfDigits == iCounter
         {
@@ -159,6 +157,44 @@ class ShowNumberVC: UIViewController {
         }
         
         print("Actual Total : \(iActualTotal)")
+    }
+    
+    func generateRandomNumber(isShowSubtraction : Bool, strDigitTypeLocal : String) -> Int
+    {
+        var aRandomInt : Int = 0
+        
+        if isShowSubtraction
+        {
+            if strDigitTypeLocal == "single"
+            {
+                aRandomInt = Int.random(in: -9...9)
+                
+            }else if strDigitTypeLocal == "double"
+            {
+                aRandomInt = Int.random(in: -99...(99))
+                
+            }else if strDigitTypeLocal == "triple"
+            {
+                aRandomInt = Int.random(in: -999...(999))
+            }
+            
+        }else
+        {
+            if strDigitTypeLocal == "single"
+            {
+                aRandomInt = Int.random(in: 0...9)
+                
+            }else if strDigitTypeLocal == "double"
+            {
+                aRandomInt = Int.random(in: 10...99)
+                
+            }else if strDigitTypeLocal == "triple"
+            {
+                aRandomInt = Int.random(in: 100...999)
+            }
+        }
+        
+        return aRandomInt
     }
     
     

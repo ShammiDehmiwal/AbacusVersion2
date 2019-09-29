@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		F9262527233DF5F0006E7B81 /* QuestionAnswerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9262526233DF5F0006E7B81 /* QuestionAnswerVC.swift */; };
 		F9262529233E06D3006E7B81 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9262528233E06D3006E7B81 /* Constant.swift */; };
 		F926252B233E7598006E7B81 /* ShowResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F926252A233E7598006E7B81 /* ShowResultsVC.swift */; };
+		F9329D4A234084C700052143 /* ViewCornerShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9329D49234084C700052143 /* ViewCornerShadowExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		F9262526233DF5F0006E7B81 /* QuestionAnswerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerVC.swift; sourceTree = "<group>"; };
 		F9262528233E06D3006E7B81 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F926252A233E7598006E7B81 /* ShowResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultsVC.swift; sourceTree = "<group>"; };
+		F9329D49234084C700052143 /* ViewCornerShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCornerShadowExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +124,6 @@
 				2ADE632FBB490B20E59A4ED5 /* Pods-AbacusTests.debug.xcconfig */,
 				82645E3095AF75C1EDB50718 /* Pods-AbacusTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -233,6 +234,7 @@
 				F9250651233C988D006D60C6 /* View+Extension.swift */,
 				F9250656233CC746006D60C6 /* String+Extension.swift */,
 				F925065A233D2400006D60C6 /* Int+Extension.swift */,
+				F9329D49234084C700052143 /* ViewCornerShadowExtension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -501,6 +503,7 @@
 				F925065B233D2400006D60C6 /* Int+Extension.swift in Sources */,
 				F925064B233C7924006D60C6 /* Color+Extension.swift in Sources */,
 				F9250652233C988D006D60C6 /* View+Extension.swift in Sources */,
+				F9329D4A234084C700052143 /* ViewCornerShadowExtension.swift in Sources */,
 				F926252B233E7598006E7B81 /* ShowResultsVC.swift in Sources */,
 				F925064D233C799E006D60C6 /* Font+Extension.swift in Sources */,
 				F9250657233CC746006D60C6 /* String+Extension.swift in Sources */,
