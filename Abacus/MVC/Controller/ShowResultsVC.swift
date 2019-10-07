@@ -19,6 +19,8 @@ class ShowResultsVC: UIViewController {
     @IBOutlet weak var vResultDetailView: UIView!
     @IBOutlet weak var vBgResultDetailView: UIView!
     
+    @IBOutlet weak var btnBack: UIButton!
+    
     
     @IBOutlet weak var lblTotalQuestions: UILabel!
     
@@ -46,12 +48,18 @@ class ShowResultsVC: UIViewController {
         vResultDetailView.layer.cornerRadius = cornerRadius
         vResultDetailView.clipsToBounds = true
         
-        
-        ivCircle.layer.cornerRadius = ivCircle.frame.size.height/2
-        ivCircle.layer.masksToBounds = true
+        if appDel.marrUserQuestions.count <= 10
+        {
+            btnBack.isHidden = false
+            
+        }else
+        {
+            btnBack.isHidden = true
+        }
         
         
         lblTotalQuestions.text = "\(appDel.marrUserQuestions.count)"
+        
         
         var iCorrectAnswer : Int = 0
         
@@ -63,6 +71,28 @@ class ShowResultsVC: UIViewController {
             {
                 iCorrectAnswer = iCorrectAnswer + 1
             }
+            
+            if x == 0
+            {
+                if let strDigi = dicResult.object(forKey: "digitType") as? String
+                {
+                    if strDigi == "single"
+                    {
+                        btnDigitType.setTitle("Single Digit", for: .normal)
+                        
+                    }else if strDigi == "double"
+                    {
+                         btnDigitType.setTitle("Double Digit", for: .normal)
+                        
+                    }else if strDigi == "triple"
+                    {
+                         btnDigitType.setTitle("Triple Digit", for: .normal)
+                    }
+                    
+                    btnDigitType.isUserInteractionEnabled = false
+                }
+            }
+            
         }
         
         lblCorrectAnswer.text = "\(iCorrectAnswer)"
@@ -78,6 +108,20 @@ class ShowResultsVC: UIViewController {
         
         lblPercentage.text = "\(iResult)%"
         lblPercentageDetail.text = lblPercentage.text
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool)
+    {
+        super.viewDidAppear(animated)
+        
+        ivCircle.layer.cornerRadius = ivCircle.frame.size.height/2
+        ivCircle.layer.masksToBounds = true
+    }
+    
+    @IBAction func btnBackTapAction(_ sender: UIButton)
+    {
+        self.navigationController?.popViewController(animated: true)
     }
     
     

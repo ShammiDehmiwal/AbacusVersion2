@@ -7,6 +7,45 @@
 //
 
 import Foundation
+import UIKit
+import QuartzCore
+
+class InnerDropShadowView: UIView {
+    override func draw(_ rect: CGRect) {
+        //Drawing code
+        let context = UIGraphicsGetCurrentContext()
+        //// Shadow Declarations
+        let shadow: UIColor? = UIColor.init(white: 0.8, alpha: 1.0)//UIColor(hex: "a3a3a3")?.withAlphaComponent(1)//UIColor.init(hexString: "a3a3a3", alpha: 1.0) //UIColor.black.withAlphaComponent(0.6) //UIColor.init(hexString: "d7d7da", alpha: 1.0)
+       
+        
+        let shadowOffset = CGSize(width: 0, height: 0)
+        let shadowBlurRadius: CGFloat = 10.5
+        //// Rectangle Drawing
+        let rectanglePath = UIBezierPath(rect: bounds)
+        UIColor.white.setFill()
+        rectanglePath.fill()
+        ////// Rectangle Inner Shadow
+        context?.saveGState()
+        UIRectClip(rectanglePath.bounds)
+        context?.setShadow(offset: CGSize.zero, blur: 0, color: nil)
+        context?.setAlpha((shadow?.cgColor.alpha)!)
+        context?.beginTransparencyLayer(auxiliaryInfo: nil)
+        do {
+            let opaqueShadow: UIColor? = shadow?.withAlphaComponent(1)
+            context?.setShadow(offset: shadowOffset, blur: shadowBlurRadius, color: opaqueShadow?.cgColor)
+            context!.setBlendMode(.sourceOut)
+            context?.beginTransparencyLayer(auxiliaryInfo: nil)
+            opaqueShadow?.setFill()
+            rectanglePath.fill()
+            context!.endTransparencyLayer()
+        }
+        context!.endTransparencyLayer()
+        context?.restoreGState()
+    }
+}
+
+
+
 /*
 import UIKit
 

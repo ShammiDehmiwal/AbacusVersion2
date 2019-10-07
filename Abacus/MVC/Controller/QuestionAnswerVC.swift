@@ -95,6 +95,8 @@ class QuestionAnswerVC: UIViewController {
                 btnQuestionNumber.setTitle("Question \(strQuestionName)", for: .normal)
             }
             
+            btnQuestionNumber.isUserInteractionEnabled = false
+            
             if let strExpression = self.dicQuestionResult.object(forKey: "expression") as? String
             {
                 lblQuestionExpression.text = strExpression

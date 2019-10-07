@@ -28,7 +28,11 @@
 		F9262527233DF5F0006E7B81 /* QuestionAnswerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9262526233DF5F0006E7B81 /* QuestionAnswerVC.swift */; };
 		F9262529233E06D3006E7B81 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9262528233E06D3006E7B81 /* Constant.swift */; };
 		F926252B233E7598006E7B81 /* ShowResultsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F926252A233E7598006E7B81 /* ShowResultsVC.swift */; };
+		F92AC1102344B5C000D52D42 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92AC10F2344B5C000D52D42 /* FeedbackVC.swift */; };
 		F9329D4A234084C700052143 /* ViewCornerShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9329D49234084C700052143 /* ViewCornerShadowExtension.swift */; };
+		F9642A0D234B229900B164BB /* Validation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9642A0C234B229900B164BB /* Validation+Extension.swift */; };
+		F9A802CB2345B62400D80328 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A802C92345B62400D80328 /* Messages.framework */; };
+		F9A802CC2345B62400D80328 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A802CA2345B62400D80328 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +86,11 @@
 		F9262526233DF5F0006E7B81 /* QuestionAnswerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswerVC.swift; sourceTree = "<group>"; };
 		F9262528233E06D3006E7B81 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		F926252A233E7598006E7B81 /* ShowResultsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowResultsVC.swift; sourceTree = "<group>"; };
+		F92AC10F2344B5C000D52D42 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		F9329D49234084C700052143 /* ViewCornerShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCornerShadowExtension.swift; sourceTree = "<group>"; };
+		F9642A0C234B229900B164BB /* Validation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+Extension.swift"; sourceTree = "<group>"; };
+		F9A802C92345B62400D80328 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		F9A802CA2345B62400D80328 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F9A802CB2345B62400D80328 /* Messages.framework in Frameworks */,
+				F9A802CC2345B62400D80328 /* MessageUI.framework in Frameworks */,
 				F9250655233CB6BF006D60C6 /* QuartzCore.framework in Frameworks */,
 				46F0E8D06ED875104425962A /* Pods_Abacus.framework in Frameworks */,
 			);
@@ -200,6 +210,7 @@
 				F9250658233D1914006D60C6 /* ShowNumberVC.swift */,
 				F9262526233DF5F0006E7B81 /* QuestionAnswerVC.swift */,
 				F926252A233E7598006E7B81 /* ShowResultsVC.swift */,
+				F92AC10F2344B5C000D52D42 /* FeedbackVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 				F9250656233CC746006D60C6 /* String+Extension.swift */,
 				F925065A233D2400006D60C6 /* Int+Extension.swift */,
 				F9329D49234084C700052143 /* ViewCornerShadowExtension.swift */,
+				F9642A0C234B229900B164BB /* Validation+Extension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -250,6 +262,8 @@
 		F9250653233CB6BF006D60C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F9A802C92345B62400D80328 /* Messages.framework */,
+				F9A802CA2345B62400D80328 /* MessageUI.framework */,
 				F9250654233CB6BF006D60C6 /* QuartzCore.framework */,
 				2FE4A909F1C22AD893AB9DFB /* Pods_Abacus.framework */,
 				D12D32921B28548EB9116733 /* Pods_Abacus_AbacusUITests.framework */,
@@ -502,11 +516,13 @@
 				F9250619233C77C0006D60C6 /* ViewController.swift in Sources */,
 				F925065B233D2400006D60C6 /* Int+Extension.swift in Sources */,
 				F925064B233C7924006D60C6 /* Color+Extension.swift in Sources */,
+				F92AC1102344B5C000D52D42 /* FeedbackVC.swift in Sources */,
 				F9250652233C988D006D60C6 /* View+Extension.swift in Sources */,
 				F9329D4A234084C700052143 /* ViewCornerShadowExtension.swift in Sources */,
 				F926252B233E7598006E7B81 /* ShowResultsVC.swift in Sources */,
 				F925064D233C799E006D60C6 /* Font+Extension.swift in Sources */,
 				F9250657233CC746006D60C6 /* String+Extension.swift in Sources */,
+				F9642A0D234B229900B164BB /* Validation+Extension.swift in Sources */,
 				F9262529233E06D3006E7B81 /* Constant.swift in Sources */,
 				F9250659233D1914006D60C6 /* ShowNumberVC.swift in Sources */,
 				F9250617233C77C0006D60C6 /* AppDelegate.swift in Sources */,
@@ -615,7 +631,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -670,7 +686,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -685,7 +701,7 @@
 			baseConfigurationReference = 63DD3405330B51D8DFF79D2C /* Pods-Abacus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = PUDVYC6JZF;
 				INFOPLIST_FILE = Abacus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -693,8 +709,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Doozycod.com.Abacus;
+				PRODUCT_BUNDLE_IDENTIFIER = RNaura.com.Abacus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = CommonProvisionProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -705,7 +722,7 @@
 			baseConfigurationReference = 8ABE70AD9486CA3D1CD68F88 /* Pods-Abacus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = PUDVYC6JZF;
 				INFOPLIST_FILE = Abacus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
@@ -713,8 +730,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Doozycod.com.Abacus;
+				PRODUCT_BUNDLE_IDENTIFIER = RNaura.com.Abacus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = CommonProvisionProfile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

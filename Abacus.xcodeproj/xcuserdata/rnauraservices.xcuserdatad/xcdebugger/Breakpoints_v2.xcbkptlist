@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Abacus/MVC/Controller/ShowNumberVC.swift"
-            timestampString = "591469089.609789"
+            timestampString = "592134100.243361"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "6"
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Abacus/MVC/Controller/ShowNumberVC.swift"
-            timestampString = "591469089.609883"
+            timestampString = "592134100.24342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "400"
+            endingLineNumber = "400"
             landmarkName = "setProgressBar()"
             landmarkType = "7">
          </BreakpointContent>

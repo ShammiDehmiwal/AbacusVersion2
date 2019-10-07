@@ -67,12 +67,12 @@ class ViewController: UIViewController {
     
     var dicLevelThird : NSDictionary = ["name":"Triple Digit","digitType":"Triple Digit","numberOfDigit":"5","speed":"500","isSubtraction":"Yes"]
     
-     var dicLevelCustom : NSDictionary = ["name":"Custom","digitType":"Single","numberOfDigit":"15","speed":"500","isSubtraction":"No"]
+     var dicLevelCustom : NSDictionary = ["name":"Custom","digitType":"Single","numberOfDigit":"15","speed":"500","isSubtraction":"Yes"]
     
     
     var strCurrentDigitType : String = "single"
     var iNumberOfDigit : Int = 15
-    var iSpeed : Int = 1500
+    var iSpeed : Int = 500
     var bIsSubtraction : Bool = true
     
     
@@ -183,7 +183,9 @@ class ViewController: UIViewController {
     
     @IBAction func btnFeedbackTapAction(_ sender: UIButton)
     {
+        let obj : FeedbackVC = self.storyboard?.instantiateViewController(withIdentifier: "FeedbackVC") as! FeedbackVC
         
+        self.navigationController?.pushViewController(obj, animated: true)
     }
     
     @IBAction func btnSpeedUpTapAction(_ sender: UIButton)
@@ -218,6 +220,9 @@ class ViewController: UIViewController {
         lblSubtraction.text = dicLevelSingle.object(forKey: "isSubtraction") as? String
         
         strCurrentDigitType = "single"
+        
+         btnLevelDetailTitle.setTitle("Single Digit", for: .normal)
+        
         let num = dicLevelSingle.object(forKey: "numberOfDigit") as! String
        iNumberOfDigit = num.toInt()
         
@@ -264,6 +269,9 @@ class ViewController: UIViewController {
         
         
         strCurrentDigitType = "double"
+        
+         btnLevelDetailTitle.setTitle("Double Digit", for: .normal)
+        
         let num = dicLevelDouble.object(forKey: "numberOfDigit") as! String
         iNumberOfDigit = num.toInt()
         
@@ -311,6 +319,9 @@ class ViewController: UIViewController {
         
         
         strCurrentDigitType = "triple"
+        
+        btnLevelDetailTitle.setTitle("Triple Digit", for: .normal)
+        
         let num = dicLevelThird.object(forKey: "numberOfDigit") as! String
         iNumberOfDigit = num.toInt()
         
@@ -490,6 +501,7 @@ class ViewController: UIViewController {
             let cancelActionButton = UIAlertAction(title: "No", style: .cancel) { _ in
                 print("no")
                 self.lblSubtraction.text = "No"
+                self.bIsSubtraction = false
             }
             actionSheetControllerIOS8.addAction(cancelActionButton)
         
@@ -498,6 +510,7 @@ class ViewController: UIViewController {
             { _ in
                 print("yes")
               self.lblSubtraction.text = "Yes"
+                self.bIsSubtraction = true
             }
             actionSheetControllerIOS8.addAction(yesbutton)
         
