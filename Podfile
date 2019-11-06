@@ -7,7 +7,7 @@ target 'Abacus' do
 
   # Pods for Abacus
 	pod 'IQKeyboardManagerSwift' #for auto keyboard manage.
-
+pod 'SlideMenuControllerSwift'
 
   target 'AbacusTests' do
     inherit! :search_paths

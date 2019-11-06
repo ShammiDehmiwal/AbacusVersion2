@@ -73,7 +73,8 @@ class FeedbackVC: UIViewController,UITextFieldDelegate,UITextViewDelegate,MFMail
     //MARK: - BUTTON action methods.
     @IBAction func btnBackTapAction(_ sender: UIButton)
     {
-        self.navigationController?.popViewController(animated: true)
+       // self.navigationController?.popViewController(animated: true)
+          self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func btnSubmitTapAction(_ sender: UIButton)

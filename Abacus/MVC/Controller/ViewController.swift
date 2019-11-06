@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
 
     
@@ -520,6 +521,13 @@ class ViewController: UIViewController {
     
     
     //MARK: - Button Action Methods.
+    
+    @IBAction func btnMenuTapAction(_ sender: UIButton)
+    {
+        self.slideMenuController()?.openLeft()
+    }
+    
+    
     @IBAction func btnStartTapAction(_ sender: UIButton)
     {
         appDel.selectNumberOfDigit = self.iNumberOfDigit

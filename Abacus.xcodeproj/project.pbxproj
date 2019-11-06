@@ -31,6 +31,8 @@
 		F92AC1102344B5C000D52D42 /* FeedbackVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F92AC10F2344B5C000D52D42 /* FeedbackVC.swift */; };
 		F9329D4A234084C700052143 /* ViewCornerShadowExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9329D49234084C700052143 /* ViewCornerShadowExtension.swift */; };
 		F9642A0D234B229900B164BB /* Validation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9642A0C234B229900B164BB /* Validation+Extension.swift */; };
+		F98E901E2371905C005D0E7F /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E901D2371905C005D0E7F /* MenuVC.swift */; };
+		F98E90202371A59E005D0E7F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F98E901F2371A59E005D0E7F /* LoginVC.swift */; };
 		F9A802CB2345B62400D80328 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A802C92345B62400D80328 /* Messages.framework */; };
 		F9A802CC2345B62400D80328 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9A802CA2345B62400D80328 /* MessageUI.framework */; };
 /* End PBXBuildFile section */
@@ -89,6 +91,8 @@
 		F92AC10F2344B5C000D52D42 /* FeedbackVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackVC.swift; sourceTree = "<group>"; };
 		F9329D49234084C700052143 /* ViewCornerShadowExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCornerShadowExtension.swift; sourceTree = "<group>"; };
 		F9642A0C234B229900B164BB /* Validation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Validation+Extension.swift"; sourceTree = "<group>"; };
+		F98E901D2371905C005D0E7F /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		F98E901F2371A59E005D0E7F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		F9A802C92345B62400D80328 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
 		F9A802CA2345B62400D80328 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -211,6 +215,8 @@
 				F9262526233DF5F0006E7B81 /* QuestionAnswerVC.swift */,
 				F926252A233E7598006E7B81 /* ShowResultsVC.swift */,
 				F92AC10F2344B5C000D52D42 /* FeedbackVC.swift */,
+				F98E901D2371905C005D0E7F /* MenuVC.swift */,
+				F98E901F2371A59E005D0E7F /* LoginVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -522,10 +528,12 @@
 				F926252B233E7598006E7B81 /* ShowResultsVC.swift in Sources */,
 				F925064D233C799E006D60C6 /* Font+Extension.swift in Sources */,
 				F9250657233CC746006D60C6 /* String+Extension.swift in Sources */,
+				F98E90202371A59E005D0E7F /* LoginVC.swift in Sources */,
 				F9642A0D234B229900B164BB /* Validation+Extension.swift in Sources */,
 				F9262529233E06D3006E7B81 /* Constant.swift in Sources */,
 				F9250659233D1914006D60C6 /* ShowNumberVC.swift in Sources */,
 				F9250617233C77C0006D60C6 /* AppDelegate.swift in Sources */,
+				F98E901E2371905C005D0E7F /* MenuVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +620,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -673,7 +681,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -701,17 +709,18 @@
 			baseConfigurationReference = 63DD3405330B51D8DFF79D2C /* Pods-Abacus.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = PUDVYC6JZF;
+				DEVELOPMENT_TEAM = 5UHD4AD8HK;
 				INFOPLIST_FILE = Abacus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RNaura.com.Abacus;
+				PRODUCT_BUNDLE_IDENTIFIER = TechDoQuest.com.Abacus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = CommonProvisionProfile;
+				PROVISIONING_PROFILE_SPECIFIER = Abacus_Production_Provisioning_Profile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -722,17 +731,18 @@
 			baseConfigurationReference = 8ABE70AD9486CA3D1CD68F88 /* Pods-Abacus.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = PUDVYC6JZF;
+				DEVELOPMENT_TEAM = 5UHD4AD8HK;
 				INFOPLIST_FILE = Abacus/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = RNaura.com.Abacus;
+				PRODUCT_BUNDLE_IDENTIFIER = TechDoQuest.com.Abacus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = CommonProvisionProfile;
+				PROVISIONING_PROFILE_SPECIFIER = Abacus_Production_Provisioning_Profile;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

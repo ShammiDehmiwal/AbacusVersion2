@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -29,7 +30,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //enable the IQKeyboard
         IQKeyboardManager.shared.enable = true
         
+        
+        // create viewController code...
+        let mainStory : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let objViewController : ViewController = mainStory.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+         let objLeftMenu : MenuVC = mainStory.instantiateViewController(withIdentifier: "MenuVC") as! MenuVC
+        
+        let slideMenuController = SlideMenuController(mainViewController: objViewController, leftMenuViewController: objLeftMenu, rightMenuViewController: objLeftMenu)
+        self.window?.rootViewController = slideMenuController
+        self.window?.makeKeyAndVisible()
+        
         return true
+        
+        
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
